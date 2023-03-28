@@ -5,11 +5,21 @@ export const Practice = () => {
   const handlerState = () => {
     setCount((count) => count + 1);
   };
+  const drecrementState = () => {
+    setCount((count) => count - 1);
+  };
+
+  const resethandler = () => {
+    setCount((count) => (count = 0));
+  };
 
   return (
-    <div style={{ color: count > 7 ? "red" : "black" }} onClick={handlerState}>
+    <div style={{ color: count > 7 ? "red" : "black" }}>
       {" "}
+      <button onClick={handlerState}>+</button>
       {count}
+      <button onClick={drecrementState}>-</button>
+      <button onClick={resethandler}>rest</button>
     </div>
   );
 };
